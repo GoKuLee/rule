@@ -1,0 +1,51 @@
+package orderRules
+
+import com.example.rule.drools.Order
+
+rule "zero"
+    no-loop true
+    lock-on-active true
+    salience 1
+    when
+        $s : Order(amount <= 100)
+    then
+        System.out.println("<=100！");
+        $s.setScore(0);
+        update($s);
+end
+
+rule "add100"
+    no-loop true
+    lock-on-active true
+    salience 1
+    when
+        $s : Order(amount > 100 && amount <= 500)
+    then
+        System.out.println("amount > 100 && amount <= 500！");
+        $s.setScore(100);
+        update($s);
+end
+
+rule "add500"
+    no-loop true
+    lock-on-active true
+    salience 1
+    when
+        $s : Order(amount > 500 && amount <= 1000)
+    then
+        System.out.println("amount > 500 && amount <= 1000！");
+        $s.setScore(500);
+        update($s);
+end
+
+rule "add1000"
+    no-loop true
+    lock-on-active true
+    salience 1
+    when
+        $s : Order(amount > 1000)
+    then
+        System.out.println("amount > 1000！");
+        $s.setScore(1000);
+        update($s);
+end
