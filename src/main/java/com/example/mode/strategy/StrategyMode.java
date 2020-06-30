@@ -98,6 +98,7 @@ enum StrategyEnum2{
         this.func = func;
     }
     public String apply(Cal cal) {
+        System.out.println("123");
         return this.func.apply(cal);
     }
 }

@@ -1,6 +1,5 @@
 package com.example.rule.aviator;
 
-import com.example.rule.drools.User;
 import com.googlecode.aviator.AviatorEvaluator;
 import com.googlecode.aviator.Expression;
 import com.googlecode.aviator.runtime.function.AbstractFunction;
